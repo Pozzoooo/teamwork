@@ -1,11 +1,11 @@
-package com.pozzo.teamwork;
+package com.pozzo.teamwork.architecture;
 
 import android.app.Application;
 import android.content.Context;
 
-import com.pozzo.teamwork.injection.AppComponent;
-import com.pozzo.teamwork.injection.AppModule;
-import com.pozzo.teamwork.injection.DaggerAppComponent;
+import com.pozzo.teamwork.architecture.injection.AppComponent;
+import com.pozzo.teamwork.architecture.injection.AppModule;
+import com.pozzo.teamwork.architecture.injection.DaggerAppComponent;
 
 /**
  * @since 27/07/17.

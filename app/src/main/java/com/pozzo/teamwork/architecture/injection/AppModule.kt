@@ -1,4 +1,4 @@
-package com.pozzo.teamwork.injection
+package com.pozzo.teamwork.architecture.injection
 
 import android.app.Application
 
