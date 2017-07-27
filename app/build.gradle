@@ -39,7 +39,7 @@ dependencies {
 	compile 'com.google.code.gson:gson:2.8.0'
 
 	//annotation
-	annotationProcessor 'com.google.dagger:dagger-compiler:2.10'
+	kapt 'com.google.dagger:dagger-compiler:2.10'
 
 	//test
 	testCompile 'junit:junit:4.12'
