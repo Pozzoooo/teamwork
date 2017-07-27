@@ -1,11 +1,9 @@
 package com.pozzo.teamwork.architecture.injection
 
 import android.app.Application
-
-import javax.inject.Singleton
-
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
 
 /**
  * @since 27/07/17.

@@ -7,10 +7,10 @@ import dagger.Provides
  * @since 27/07/17.
  */
 @Module
-class UserManager {
+class UserModule {
 
     @Provides
     fun provideLoggedInUser(): User {
-        return User("yat@triplespin.com", "yatyatyat27")
+        return User(username = "yat@triplespin.com", password = "yatyatyat27")
     }
 }
