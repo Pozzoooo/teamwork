@@ -21,10 +21,16 @@ requested some of the apis to make sure I got it;
 
 # Design
 
+I haven't spent too much time on design (noticeable I know), but I have tried to make 
+it as much independent from the implementation as possible, so it can be adaptable 
+by the ui layer.  
+I'm not sure how customizable the sites are between each other, but seems like it 
+would be wise to crete a dynamic design system.
+
 # Layers
 
 My layer choice has the idea to focus Unit test on Business, integration test on 
-Network, threading on Presenter and Ui on Activities.
+Network, threading and flow on Presenter and Ui on Activities and Views.
 
 #### Networking
 I have used a very simple approach, where you can directly call a network client that 
@@ -38,7 +44,12 @@ the stack.
 I'm using a strategy where I can easily unit test the business layer and use the 
 network layer (Client + Api) for the integration tests.  
 
-# What I Missed
+# Things that I would have done if I had more time 
+
+#### Design
+- Find the exact Teamwork colors to use;
+- Load project logo image on project list using an Image Loader lib;
+- Start checkbox on project list.
 
 #### Persistence
 I completely ignored this one on my sample for the sake of simplicity.  
@@ -48,7 +59,7 @@ SQLite or RealmDB should be probably one my choices.
 This is essential thing to me, would not release an app without an error reporting 
 system and an analytics.
 
-### What else?
+#### What else?
 There are a few "todo" around the code with other minor improvements.
 
 # Issues found

@@ -1,6 +1,5 @@
 package com.pozzo.teamwork.project.list
 
-import android.app.FragmentManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -14,13 +13,11 @@ import com.pozzo.teamwork.project.model.Project
  */
 class ProjectListAdapter: RecyclerView.Adapter<ProjectListAdapter.ViewHolder> {
     private var items: List<Project>
-    private var isTwoPane: Boolean
-    private var fragmentManager: FragmentManager
+    private var projectListView: ProjectListView
 
-    constructor(items: List<Project>, isTwoPane: Boolean, fragmentManager: FragmentManager) {
+    constructor(items: List<Project>, projectListView: ProjectListView) {
         this.items = items
-        this.isTwoPane = isTwoPane
-        this.fragmentManager = fragmentManager
+        this.projectListView = projectListView
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -35,21 +32,7 @@ class ProjectListAdapter: RecyclerView.Adapter<ProjectListAdapter.ViewHolder> {
         holder.contentView.setText(items[position].name)
 
         holder.mView.setOnClickListener({ v ->
-//            if (isTwoPane) {
-//                val arguments = Bundle()
-//                arguments.putString(ProjectDetailFragment.ARG_ITEM_ID, holder.item!!.id)
-//                val fragment = ProjectDetailFragment()
-//                fragment.arguments = arguments
-//                fragmentManager.beginTransaction()
-//                        .replace(R.id.project_detail_container, fragment)
-//                        .commit()
-//            } else {
-//                val context = v.context
-//                val intent = Intent(context, ProjectDetailActivity::class.java)
-//                intent.putExtra(ProjectDetailFragment.ARG_ITEM_ID, holder.item!!.id)
-//
-//                context.startActivity(intent)
-//            }
+            projectListView.selectProject(holder.item)
         })
     }
 
@@ -60,7 +43,7 @@ class ProjectListAdapter: RecyclerView.Adapter<ProjectListAdapter.ViewHolder> {
     inner class ViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
         val idView: TextView
         val contentView: TextView
-        var item: Project? = null
+        lateinit var item: Project
 
         init {
             idView = mView.findViewById(R.id.id)

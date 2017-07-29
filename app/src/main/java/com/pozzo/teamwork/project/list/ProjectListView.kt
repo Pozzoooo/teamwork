@@ -9,4 +9,5 @@ import com.pozzo.teamwork.project.model.Project
 interface ProjectListView: BaseView {
     fun displayProjectList(projectList: List<Project>)
     fun selectProject(project: Project)
+    fun startDetail(project: Project)
 }

@@ -27,4 +27,8 @@ class ProjectListPresenter: BasePresenter<ProjectListView> {
     fun display(projects: List<Project>) {
         getView()?.displayProjectList(projects)
     }
+
+    fun selectProject(project: Project) {
+        getView()?.startDetail(project)
+    }
 }

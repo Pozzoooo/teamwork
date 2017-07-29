@@ -23,13 +23,13 @@
 			</intent-filter>
 		</activity>
 		<activity
-			android:name=".ProjectDetailActivity"
+			android:name=".project.detail.ProjectDetailActivity"
 			android:label="@string/title_project_detail"
-			android:parentActivityName=".ProjectListActivity"
+			android:parentActivityName=".project.list.ProjectListActivity"
 			android:theme="@style/AppTheme.NoActionBar">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
-				android:value="com.pozzo.teamwork.ProjectListActivity"/>
+				android:value="com.pozzo.teamwork.project.list.ProjectListActivity"/>
 		</activity>
 	</application>
 

@@ -1,5 +1,6 @@
 package com.pozzo.teamwork.project.list
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.Snackbar
@@ -10,6 +11,8 @@ import com.pozzo.teamwork.R
 import com.pozzo.teamwork.architecture.injection.AppComponent
 import com.pozzo.teamwork.architecture.mvp.BaseActivity
 import com.pozzo.teamwork.project.ProjectModule
+import com.pozzo.teamwork.project.detail.ProjectDetailActivity
+import com.pozzo.teamwork.project.detail.ProjectDetailFragment
 import com.pozzo.teamwork.project.model.Project
 import javax.inject.Inject
 
@@ -59,10 +62,20 @@ class ProjectListActivity: BaseActivity(), ProjectListView {
 
     override fun displayProjectList(projectList: List<Project>) {
         val recyclerView: RecyclerView = findViewById(R.id.project_list)
-        recyclerView.adapter = ProjectListAdapter(projectList, isTwoPane, fragmentManager)
+        recyclerView.adapter = ProjectListAdapter(projectList, this)
     }
 
     override fun selectProject(project: Project) {
-        TODO("not implemented")
+        presenter.selectProject(project)
+    }
+
+    override fun startDetail(project: Project) {
+        if (isTwoPane) {
+            val fragment = ProjectDetailFragment.newInstance(project)
+            replaceFragment(fragment, R.id.project_detail_container)
+        } else {
+            val intent = ProjectDetailActivity.newIntent(this, project)
+            startActivity(intent)
+        }
     }
 }
