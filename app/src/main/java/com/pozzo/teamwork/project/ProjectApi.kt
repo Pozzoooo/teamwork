@@ -1,7 +1,7 @@
 package com.pozzo.teamwork.project
 
+import com.pozzo.teamwork.project.model.Projects
 import retrofit2.Call
-import retrofit2.Response
 import retrofit2.http.GET
 
 /**

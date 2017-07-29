@@ -1,4 +1,4 @@
-package com.pozzo.teamwork.project
+package com.pozzo.teamwork.project.model
 
 /**
  * @since 27/07/17.

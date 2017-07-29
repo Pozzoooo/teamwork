@@ -1,4 +1,4 @@
-package com.pozzo.teamwork.project
+package com.pozzo.teamwork.project.model
 
 import com.pozzo.teamwork.architecture.network.TwResponse
 
