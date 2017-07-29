@@ -10,24 +10,21 @@ import javax.inject.Inject
  */
 class ProjectListPresenter: BasePresenter<ProjectListView> {
     private var projectBusiness: ProjectBusiness
+    private var allProjects: List<Project> = ArrayList<Project>()
 
     @Inject constructor(projectBusiness: ProjectBusiness) {
         this.projectBusiness = projectBusiness
     }
 
     override fun onLoad() {
-        /*todo onLoad
-            show it is loading
-            load projects in background
-            display projects in foreground
-         */
+        runInBackground(this::loadProjects, { display(allProjects) })
     }
 
     fun loadProjects() {
-        //todo loadProjects
+        allProjects = projectBusiness.getAllProjects()
     }
 
-    fun displayProjects(projects: List<Project>) {
-        //todo displayProjects
+    fun display(projects: List<Project>) {
+        getView()?.displayProjectList(projects)
     }
 }
