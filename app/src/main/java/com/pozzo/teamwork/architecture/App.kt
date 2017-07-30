@@ -13,6 +13,12 @@ import com.pozzo.teamwork.architecture.injection.DaggerAppComponent
  * @since 27/07/17.
  */
 class App : Application() {
+    companion object {
+        operator fun get(context: Context): App {
+            return context.applicationContext as App
+        }
+    }
+
     private lateinit var appComponent: AppComponent
 
     override fun onCreate() {
@@ -25,19 +31,12 @@ class App : Application() {
         return appComponent
     }
 
-    protected val appModule: AppModule
+    private val appModule: AppModule
         get() = AppModule(this)
 
-    protected fun initComponent() {
+    private fun initComponent() {
         appComponent = DaggerAppComponent.builder()
                 .appModule(appModule)
                 .build()
-    }
-
-    companion object {
-
-        operator fun get(context: Context): App {
-            return context.applicationContext as App
-        }
     }
 }

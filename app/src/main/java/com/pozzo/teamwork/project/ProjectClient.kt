@@ -3,17 +3,11 @@ package com.pozzo.teamwork.project
 import com.pozzo.teamwork.project.model.Project
 
 /**
- * Network client to request Project web sevices.
+ * Network client to request Project web services.
  *
  * @since 28/07/17.
  */
-class ProjectClient {
-    private var projectApi: ProjectApi
-
-    constructor(projectApi: ProjectApi) {
-        this.projectApi = projectApi
-    }
-
+class ProjectClient(private val projectApi: ProjectApi) {
     /**
      * @return request all projects from logged in user.
      */

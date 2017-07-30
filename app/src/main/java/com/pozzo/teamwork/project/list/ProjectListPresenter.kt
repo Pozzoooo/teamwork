@@ -8,13 +8,9 @@ import javax.inject.Inject
 /**
  * @since 27/07/17.
  */
-class ProjectListPresenter: BasePresenter<ProjectListView> {
-    private var projectBusiness: ProjectBusiness
-    private var allProjects: List<Project> = ArrayList<Project>()
-
-    @Inject constructor(projectBusiness: ProjectBusiness) {
-        this.projectBusiness = projectBusiness
-    }
+class ProjectListPresenter @Inject constructor(private var projectBusiness: ProjectBusiness) :
+        BasePresenter<ProjectListView>() {
+    private var allProjects: List<Project> = ArrayList()
 
     override fun onLoad() {
         runInBackground(this::loadProjects, { display(allProjects) })

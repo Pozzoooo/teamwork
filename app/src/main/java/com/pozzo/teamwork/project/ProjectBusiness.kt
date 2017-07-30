@@ -8,13 +8,7 @@ import com.pozzo.teamwork.project.model.Project
  * @see Project
  * @since 28/07/17.
  */
-class ProjectBusiness {
-    private var projectClient: ProjectClient
-
-    constructor(projectClient: ProjectClient) {
-        this.projectClient = projectClient
-    }
-
+class ProjectBusiness(private val projectClient: ProjectClient) {
     /**
      * @return request all projects from logged in user.
      */

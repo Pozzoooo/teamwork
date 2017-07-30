@@ -2,10 +2,8 @@ package com.pozzo.teamwork.project.list
 
 import com.pozzo.teamwork.architecture.injection.ActivityScope
 import com.pozzo.teamwork.architecture.injection.AppComponent
-import com.pozzo.teamwork.architecture.injection.SiteModule
 import com.pozzo.teamwork.project.ProjectClient
 import com.pozzo.teamwork.project.ProjectModule
-
 import dagger.Component
 
 /**

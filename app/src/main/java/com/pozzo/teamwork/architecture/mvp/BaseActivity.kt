@@ -19,7 +19,7 @@ abstract class BaseActivity : Activity(), BaseView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val app = App.get(this)
+        val app = App[this]
         onCreateComponent(app.component())
     }
 

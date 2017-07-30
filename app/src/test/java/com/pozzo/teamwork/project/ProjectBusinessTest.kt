@@ -28,6 +28,6 @@ class ProjectBusinessTest: BaseTest() {
     fun shouldGetAllDownloadedProjects() {
         val allProjects = projectBusiness.getAllProjects()
         assertEquals(mockedProjectList.size, allProjects.size)
-        assertEquals(mockedProjectList.get(0), allProjects.get(0))
+        assertEquals(mockedProjectList[0], allProjects[0])
     }
 }

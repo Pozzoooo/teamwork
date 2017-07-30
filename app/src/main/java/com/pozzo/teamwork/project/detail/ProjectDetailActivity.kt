@@ -10,8 +10,6 @@ import android.widget.Toolbar
 import com.pozzo.teamwork.R
 import com.pozzo.teamwork.architecture.injection.AppComponent
 import com.pozzo.teamwork.architecture.mvp.BaseActivity
-import com.pozzo.teamwork.project.list.DaggerProjectDetailComponent
-import com.pozzo.teamwork.project.list.ProjectListActivity
 import com.pozzo.teamwork.project.model.Project
 import javax.inject.Inject
 
@@ -70,7 +68,7 @@ class ProjectDetailActivity: BaseActivity(), ProjectDetailView {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
         if (id == android.R.id.home) {
-            navigateUpTo(Intent(this, ProjectListActivity::class.java))
+            onBackPressed()
             return true
         }
         return super.onOptionsItemSelected(item)

@@ -18,8 +18,7 @@ data class Project(val id: String, val logo: String, val name: String, val descr
             parcel.readString(),
             parcel.readString(),
             parcel.readString(),
-            parcel.readByte() != 0.toByte()) {
-    }
+            parcel.readByte() != 0.toByte())
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(id)

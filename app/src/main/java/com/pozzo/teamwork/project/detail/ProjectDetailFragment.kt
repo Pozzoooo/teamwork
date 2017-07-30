@@ -25,6 +25,7 @@ class ProjectDetailFragment: BaseFragment() {
         fun newInstance(project: Project): ProjectDetailFragment {
             val arguments = Bundle()
             arguments.putParcelable(ProjectDetailFragment.PARAM_PROJECT, project)
+
             val fragment = ProjectDetailFragment()
             fragment.arguments = arguments
             return fragment
@@ -33,9 +34,8 @@ class ProjectDetailFragment: BaseFragment() {
 
     private lateinit var project: Project
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup,
+                              savedInstanceState: Bundle?): View {
         if (arguments.containsKey(PARAM_PROJECT)) {
             project = arguments.getParcelable(PARAM_PROJECT)
 
@@ -47,10 +47,7 @@ class ProjectDetailFragment: BaseFragment() {
                     load(project.logo).
                     into(projectLogo)
         }
-    }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup,
-                              savedInstanceState: Bundle?): View {
         val rootView = inflater.inflate(R.layout.project_detail, container, false)
         rootView.findViewById<TextView>(R.id.project_detail).text = project.description
         return rootView

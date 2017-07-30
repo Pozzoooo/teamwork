@@ -19,6 +19,8 @@ class ProjectClientTest: BaseTest() {
 
     @Before
     fun setUp() {
+        println("ProjectClientTest is an integration test, and should be isolated")
+
         val appComponent = getAppComponent()
         val projectListComponent = DaggerProjectListComponent.builder()
                 .appComponent(appComponent)

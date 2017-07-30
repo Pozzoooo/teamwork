@@ -14,14 +14,8 @@ import com.squareup.picasso.Picasso
 /**
  * @since 29/07/17.
  */
-class ProjectListAdapter: RecyclerView.Adapter<ProjectListAdapter.ViewHolder> {
-    private var items: List<Project>
-    private var projectListView: ProjectListView
-
-    constructor(items: List<Project>, projectListView: ProjectListView) {
-        this.items = items
-        this.projectListView = projectListView
-    }
+class ProjectListAdapter(private var items: List<Project>, private var projectListView: ProjectListView) :
+        RecyclerView.Adapter<ProjectListAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -45,23 +39,17 @@ class ProjectListAdapter: RecyclerView.Adapter<ProjectListAdapter.ViewHolder> {
     }
 
     inner class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-        val projectLogo: ImageView
-        val contentView: TextView
-        val favoriteCheckBox: View
+        val projectLogo: ImageView = view.findViewById(R.id.project_logo)
+        val contentView: TextView = view.findViewById(R.id.title)
+        val favoriteCheckBox: View = view.findViewById(R.id.favorite_check_box)
         lateinit var item: Project
-
-        init {
-            projectLogo = view.findViewById(R.id.project_logo)
-            contentView = view.findViewById(R.id.title)
-            favoriteCheckBox = view.findViewById(R.id.favorite_check_box)
-        }
 
         fun display(item: Project) {
             this.item = item
             contentView.text = item.name
             Picasso.with(view.context).
                     load(item.logo).
-                    placeholder(R.drawable.project_icon).
+                    placeholder(R.mipmap.ic_launcher).
                     into(projectLogo)
         }
     }

@@ -1,9 +1,7 @@
-package com.pozzo.teamwork.project.list
+package com.pozzo.teamwork.project.detail
 
 import com.pozzo.teamwork.architecture.injection.ActivityScope
 import com.pozzo.teamwork.architecture.injection.AppComponent
-import com.pozzo.teamwork.project.detail.ProjectDetailActivity
-import com.pozzo.teamwork.project.detail.ProjectDetailModule
 import dagger.Component
 
 /**

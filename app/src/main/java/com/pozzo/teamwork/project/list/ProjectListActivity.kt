@@ -30,7 +30,7 @@ class ProjectListActivity: BaseActivity(), ProjectListView {
                 .appComponent(appComponent)
                 .projectModule(ProjectModule())
                 .build()
-                .inject(this);
+                .inject(this)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +38,7 @@ class ProjectListActivity: BaseActivity(), ProjectListView {
         setContentView(R.layout.activity_project_list)
 
         refreshLayout = findViewById(R.id.refresh_layout)
-        refreshLayout.isEnabled = false
+        refreshLayout.isEnabled = false//todo create a proper pull to refresh
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
 

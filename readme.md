@@ -1,6 +1,3 @@
-todo:
-- final code review.
-
 #### This is a sample app created for Teamwork, enjoy!
 
 # Timeline
@@ -62,10 +59,15 @@ But I would strongly recommend a more elaborated solution using a bound service
 with and a caching and queue system, which would be able to detach requests from 
 the stack.
 
-# Unit Test
+# Test
 
 I'm using a strategy where I can easily unit test the business layer and use the 
 network layer (Client + Api) for the integration tests.  
+There was not much to test, as there is no real business implemented.  
+If a more complete test coverage is requested, then I would go for espresso, 
+usually testing the happy paths and the most important unhappy ones, but I would avoid 
+to big coverage on this kind of test, as they are usually fragile and maintaince can 
+come back as a big cost.
 
 # Things that I would have done if I had more time 
 
@@ -87,6 +89,15 @@ system and an analytics.
 
 #### Login
 I have also ignored the login flow, credentials are hardcoded in the app.
+
+#### Networking
+Pull to refresh usually is a good idea as well as network aware sync adapter.
+
+### Tablet
+Even though I have created with support, I haven't tested on it.
+
+### Integration test
+They need to be isolated, a gradle task, folder and packages could handle that.
 
 #### What else?
 There are a few "todo" around the code with other minor improvements.

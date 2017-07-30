@@ -7,7 +7,7 @@
 	android:padding="@dimen/margin_text"
 	android:gravity="center_vertical"
 	android:orientation="horizontal"
-	android:background="?attr/selectableItemBackground">
+	android:foreground="?attr/selectableItemBackground">
 
 	<ImageView
 		android:id="@+id/project_logo"
@@ -15,7 +15,7 @@
 		android:layout_height="match_parent"
 		android:contentDescription="@string/content_description_project_logo"
 		android:scaleType="centerCrop"
-		tools:src="@drawable/project_icon"/>
+		tools:src="@mipmap/ic_launcher"/>
 
 	<TextView
 		android:id="@+id/title"
