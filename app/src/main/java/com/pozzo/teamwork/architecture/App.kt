@@ -8,6 +8,8 @@ import com.pozzo.teamwork.architecture.injection.AppModule
 import com.pozzo.teamwork.architecture.injection.DaggerAppComponent
 
 /**
+ * App initialization.
+ *
  * @since 27/07/17.
  */
 class App : Application() {

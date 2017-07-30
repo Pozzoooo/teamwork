@@ -13,11 +13,15 @@ import com.pozzo.teamwork.architecture.mvp.BaseActivity
 import com.pozzo.teamwork.project.list.DaggerProjectDetailComponent
 import com.pozzo.teamwork.project.list.ProjectListActivity
 import com.pozzo.teamwork.project.model.Project
+import javax.inject.Inject
 
 /**
+ * @see Project
+ * @see ProjectDetailFragment
  * @since 29/07/17.
  */
-class ProjectDetailActivity: BaseActivity() {
+class ProjectDetailActivity: BaseActivity(), ProjectDetailView {
+    @Inject lateinit var presenter: ProjectDetailPresenter
 
     companion object {
         fun newIntent(context: Context, project: Project): Intent {
@@ -37,6 +41,8 @@ class ProjectDetailActivity: BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_project_detail)
+        presenter.takeView(this)
+
         val toolbar: Toolbar = findViewById(R.id.detail_toolbar)
         setActionBar(toolbar)
 
@@ -52,9 +58,13 @@ class ProjectDetailActivity: BaseActivity() {
 
         if (savedInstanceState == null) {
             val project = intent.getParcelableExtra<Project>(ProjectDetailFragment.PARAM_PROJECT)
-            val fragment = ProjectDetailFragment.newInstance(project)
-            addFragment(fragment, R.id.project_detail_container)
+            presenter.openProject(project)
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.dropView()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -64,5 +74,10 @@ class ProjectDetailActivity: BaseActivity() {
             return true
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun displayProject(project: Project) {
+        val fragment = ProjectDetailFragment.newInstance(project)
+        replaceFragment(fragment, R.id.project_detail_container)
     }
 }

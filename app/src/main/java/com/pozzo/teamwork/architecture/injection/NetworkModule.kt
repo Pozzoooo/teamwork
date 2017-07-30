@@ -4,7 +4,6 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.pozzo.teamwork.login.BasicAuthorizationInterceptor
 import com.pozzo.teamwork.login.LoginModule
-import com.pozzo.teamwork.user.UserModule
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient

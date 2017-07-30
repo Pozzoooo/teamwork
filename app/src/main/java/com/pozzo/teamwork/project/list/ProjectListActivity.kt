@@ -1,6 +1,5 @@
 package com.pozzo.teamwork.project.list
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.Snackbar
@@ -18,8 +17,7 @@ import com.pozzo.teamwork.project.model.Project
 import javax.inject.Inject
 
 /**
- * understand how rotation is going to be handled here and the inject life cycle
- *
+ * @see Project
  * @since 27/07/17.
  */
 class ProjectListActivity: BaseActivity(), ProjectListView {

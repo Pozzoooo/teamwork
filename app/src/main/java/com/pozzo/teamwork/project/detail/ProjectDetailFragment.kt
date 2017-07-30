@@ -13,6 +13,9 @@ import com.pozzo.teamwork.project.model.Project
 import com.squareup.picasso.Picasso
 
 /**
+ * @see com.pozzo.teamwork.project.list.ProjectListActivity
+ * @see Project
+ * @see ProjectDetailFragment
  * @since 29/07/17.
  */
 class ProjectDetailFragment: BaseFragment() {

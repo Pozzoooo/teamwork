@@ -8,6 +8,10 @@ import com.pozzo.teamwork.architecture.App
 import com.pozzo.teamwork.architecture.injection.AppComponent
 
 /**
+ * Provides basic abstraction of an activity, should improve development speed by implementing
+ *  generic functionalities and development tools.
+ * Should also tend to help maintaining implementation similar through the application.
+ *
  * @since 27/07/17.
  */
 abstract class BaseActivity : Activity(), BaseView {

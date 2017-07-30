@@ -6,6 +6,8 @@ import okhttp3.Interceptor
 import okhttp3.Response
 
 /**
+ * Okhttp interceptor to handle Basic authenticator.
+ *
  * @since 27/07/17.
  */
 class BasicAuthorizationInterceptor(val loggedInUser: User) : Interceptor {

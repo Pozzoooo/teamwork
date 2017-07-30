@@ -3,6 +3,9 @@ package com.pozzo.teamwork.project
 import com.pozzo.teamwork.project.model.Project
 
 /**
+ * Business logic regarding Project.
+ *
+ * @see Project
  * @since 28/07/17.
  */
 class ProjectBusiness {

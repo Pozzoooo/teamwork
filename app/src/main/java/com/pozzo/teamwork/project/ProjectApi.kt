@@ -5,6 +5,8 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 /**
+ * Teamwork api to project access.
+ *
  * @since 27/07/17.
  */
 interface ProjectApi {

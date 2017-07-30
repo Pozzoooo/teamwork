@@ -4,6 +4,10 @@ import android.os.Parcel
 import android.os.Parcelable
 
 /**
+ * Represent a project inside Teamwork.
+ * A Site may contains multiples projects.
+ *
+ * @see com.pozzo.teamwork.architecture.model.Site
  * @since 27/07/17.
  */
 data class Project(val id: String, val logo: String, val name: String, val description: String,

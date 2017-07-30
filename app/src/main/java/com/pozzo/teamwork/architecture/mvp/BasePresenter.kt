@@ -4,6 +4,10 @@ import android.os.AsyncTask
 import java.lang.ref.WeakReference
 
 /**
+ * Provides basic abstraction of a presenter, should improve development speed by implementing
+ *  generic functionalities and development tools.
+ * Should also tend to help maintaining implementation similar through the application.
+ *
  * @since 27/07/17.
  */
 abstract class BasePresenter<V : BaseView> {

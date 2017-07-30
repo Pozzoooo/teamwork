@@ -3,6 +3,8 @@ package com.pozzo.teamwork.project
 import com.pozzo.teamwork.project.model.Project
 
 /**
+ * Network client to request Project web sevices.
+ *
  * @since 28/07/17.
  */
 class ProjectClient {

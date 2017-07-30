@@ -1,7 +1,5 @@
 todo:
-- more documentation;
 - final code review.
-- missing details activity presenter!?
 
 #### This is a sample app created for Teamwork, enjoy!
 

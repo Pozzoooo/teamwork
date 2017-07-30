@@ -11,6 +11,8 @@ import retrofit2.Retrofit
 import javax.inject.Singleton
 
 /**
+ * Root component.
+ *
  * @since 27/07/17.
  */
 @Singleton

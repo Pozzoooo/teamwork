@@ -30,7 +30,7 @@
 				android:layout_height="match_parent"
 				android:scaleType="centerCrop"
 				android:contentDescription="@string/content_description_project_logo"
-				android:src="@drawable/project_icon"/>
+				tools:src="@drawable/project_icon"/>
 
 			<Toolbar
 				android:id="@+id/detail_toolbar"
