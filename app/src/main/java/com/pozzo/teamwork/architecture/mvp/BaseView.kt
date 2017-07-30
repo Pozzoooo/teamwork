@@ -9,4 +9,6 @@ interface BaseView {
 
     fun showLoading()
     fun hideLoading()
+
+    fun error(error: Throwable)
 }

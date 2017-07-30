@@ -32,22 +32,25 @@ abstract class BasePresenter<V : BaseView> {
      * Run backgroundTask while displaying visual load feedback.
      */
     protected fun runInBackground(backgroundTask: () -> Unit, postTask: (() -> Unit)? = null) {
-        object: AsyncTask<Unit, Unit, Unit>() {
+        object: AsyncTask<Unit, Unit, Throwable?>() {
             override fun onPreExecute() {
                 getView()?.showLoading()
             }
 
-            override fun doInBackground(vararg p0: Unit?): Unit {
+            override fun doInBackground(vararg p0: Unit?): Throwable? {
                 try {
                     backgroundTask()
                 } catch (e: Throwable) {
-                    e.printStackTrace()
-                    //todo create default interface for unknown error
+                    return e
                     //todo attach report system
                 }
+                return null
             }
 
-            override fun onPostExecute(result: Unit?) {
+            override fun onPostExecute(result: Throwable?) {
+                if (result != null) {
+                    getView()?.error(result)
+                }
                 if (postTask != null) {
                     postTask()
                 }

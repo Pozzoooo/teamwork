@@ -24,7 +24,6 @@
 		</activity>
 		<activity
 			android:name=".project.detail.ProjectDetailActivity"
-			android:label="@string/title_project_detail"
 			android:parentActivityName=".project.list.ProjectListActivity"
 			android:theme="@style/AppTheme.NoActionBar">
 			<meta-data

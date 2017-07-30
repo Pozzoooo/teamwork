@@ -3,6 +3,7 @@ package com.pozzo.teamwork.architecture.mvp
 import android.app.Activity
 import android.os.Bundle
 import android.widget.Toast
+import com.pozzo.teamwork.R
 import com.pozzo.teamwork.architecture.App
 import com.pozzo.teamwork.architecture.injection.AppComponent
 
@@ -21,13 +22,16 @@ abstract class BaseActivity : Activity(), BaseView {
     protected abstract fun onCreateComponent(appComponent: AppComponent)
 
     override fun showLoading() {
-        Toast.makeText(this, "Loading", Toast.LENGTH_SHORT).show()
-        //todo showLoading
+        Toast.makeText(this, R.string.loading, Toast.LENGTH_SHORT).show()
     }
 
     override fun hideLoading() {
-        Toast.makeText(this, "Loaded", Toast.LENGTH_SHORT).show()
-        //todo hideLoading
+        Toast.makeText(this, R.string.loaded, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun error(error: Throwable) {
+        val message = getString(R.string.error) + " " + error.localizedMessage
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 
     fun addFragment(fragment: BaseFragment, id: Int) {
