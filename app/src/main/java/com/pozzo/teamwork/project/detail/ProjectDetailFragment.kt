@@ -5,10 +5,12 @@ import android.support.design.widget.CollapsingToolbarLayout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import com.pozzo.teamwork.R
 import com.pozzo.teamwork.architecture.mvp.BaseFragment
 import com.pozzo.teamwork.project.model.Project
+import com.squareup.picasso.Picasso
 
 /**
  * @since 29/07/17.
@@ -36,6 +38,11 @@ class ProjectDetailFragment: BaseFragment() {
 
             val appBarLayout: CollapsingToolbarLayout = activity.findViewById(R.id.toolbar_layout)
             appBarLayout.title = project.name
+
+            val projectLogo: ImageView = activity.findViewById(R.id.project_logo)
+            Picasso.with(activity).
+                    load(project.logo).
+                    into(projectLogo)
         }
     }
 

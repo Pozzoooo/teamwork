@@ -21,13 +21,13 @@
 											android:name="com.pozzo.teamwork.ProjectListFragment"
 											xmlns:android="http://schemas.android.com/apk/res/android"
 											xmlns:tools="http://schemas.android.com/tools"
-											android:layout_width="@dimen/item_width"
+											android:layout_width="@dimen/width_item"
 											android:layout_height="match_parent"
 											android:layout_marginLeft="16dp"
 											android:layout_marginRight="16dp"
 											app:layoutManager="LinearLayoutManager"
 											tools:context="com.pozzo.teamwork.ProjectListActivity"
-											tools:listitem="@layout/project_list_content"/>
+											tools:listitem="@layout/item_project_list"/>
 
 	<FrameLayout
 		android:id="@+id/project_detail_container"

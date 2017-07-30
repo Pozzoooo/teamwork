@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.Snackbar
+import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.Toolbar
@@ -24,6 +25,7 @@ import javax.inject.Inject
 class ProjectListActivity: BaseActivity(), ProjectListView {
     @Inject lateinit var presenter: ProjectListPresenter
     private var isTwoPane: Boolean = false
+    private lateinit var refreshLayout: SwipeRefreshLayout
 
     override fun onCreateComponent(appComponent: AppComponent) {
         DaggerProjectListComponent.builder()
@@ -37,7 +39,11 @@ class ProjectListActivity: BaseActivity(), ProjectListView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_project_list)
 
+        refreshLayout = findViewById(R.id.refresh_layout)
+        refreshLayout.isEnabled = false
+
         val toolbar: Toolbar = findViewById(R.id.toolbar)
+
         setActionBar(toolbar)
         toolbar.title = title
 
@@ -77,5 +83,13 @@ class ProjectListActivity: BaseActivity(), ProjectListView {
             val intent = ProjectDetailActivity.newIntent(this, project)
             startActivity(intent)
         }
+    }
+
+    override fun showLoading() {
+        refreshLayout.isRefreshing = true
+    }
+
+    override fun hideLoading() {
+        refreshLayout.isRefreshing = false
     }
 }

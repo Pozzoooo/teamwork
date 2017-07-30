@@ -4,6 +4,7 @@
 		<item name="colorPrimary">@color/colorPrimary</item>
 		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
 		<item name="colorAccent">@color/colorAccent</item>
+		<item name="textAppearanceListItem">@style/textAppearanceListItemTitle</item>
 	</style>
 
 	<style name="AppTheme.NoActionBar">
@@ -14,4 +15,13 @@
 	<style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
 	<style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+	<style name="textAppearanceListItemTitle">
+		<item name="android:textStyle">bold</item>
+		<item name="android:textSize">@dimen/text_bigger</item>
+	</style>
+
+	<style name="textAppearanceDescription">
+		<item name="android:textSize">@dimen/text_normal</item>
+	</style>
 </resources>

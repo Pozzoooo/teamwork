@@ -1,10 +1,14 @@
 <TextView
-	android:id="@+id/project_detail"
-	style="?android:attr/textAppearanceLarge"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/project_detail"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:padding="16dp"
+	android:layout_marginTop="@dimen/margin_fab_runner"
+	android:layout_marginBottom="@dimen/margin_activity"
+	android:layout_marginEnd="@dimen/margin_activity"
+	android:layout_marginStart="@dimen/margin_activity"
 	android:textIsSelectable="true"
-	tools:context="com.pozzo.teamwork.project.detail.ProjectDetailFragment"/>
+	style="@style/textAppearanceDescription"
+	tools:context="com.pozzo.teamwork.project.detail.ProjectDetailFragment"
+	tools:text="This is the description of a project!"/>

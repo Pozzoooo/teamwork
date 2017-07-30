@@ -8,6 +8,7 @@ import android.os.Parcelable
  */
 data class Project(val id: String, val logo: String, val name: String, val description: String,
                    val isProjectAdmin: Boolean) : Parcelable {
+
     constructor(parcel: Parcel) : this(
             parcel.readString(),
             parcel.readString(),

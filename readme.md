@@ -1,9 +1,3 @@
-
-- Take teamwork colors
-- Create a basic theme
-- Remove ide commited stuff
-
-
 #### This is a sample app created for Teamwork, enjoy!
 
 # Timeline
@@ -18,6 +12,10 @@ requested some of the apis to make sure I got it;
 - Authorization and api calls;
 - Test structure with initial tests;
 - First end to end (Projects);
+- Minimum viable project list;
+- Minimum viable project details;
+- Communication between activities;
+- Design improvements;
 
 # Design
 
@@ -52,8 +50,10 @@ network layer (Client + Api) for the integration tests.
 - Start checkbox on project list.
 
 #### Persistence
-I completely ignored this one on my sample for the sake of simplicity.  
-SQLite or RealmDB should be probably one my choices.
+I completely ignored this one on my sample for time constraints.  
+SQLite or RealmDB should be probably one my choices.  
+A new layer would be required, a caching strategy that could take datbase advantage.  
+A sync adapter would probably be useful for this project as well.
 
 #### Reporting system
 This is essential thing to me, would not release an app without an error reporting 

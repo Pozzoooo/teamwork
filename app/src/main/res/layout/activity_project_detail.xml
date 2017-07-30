@@ -11,7 +11,7 @@
 	<android.support.design.widget.AppBarLayout
 		android:id="@+id/app_bar"
 		android:layout_width="match_parent"
-		android:layout_height="@dimen/app_bar_height"
+		android:layout_height="@dimen/height_app_bar"
 		android:fitsSystemWindows="true"
 		android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
@@ -24,12 +24,22 @@
 			app:layout_scrollFlags="scroll|exitUntilCollapsed"
 			app:toolbarId="@+id/toolbar">
 
+			<ImageView
+				android:id="@+id/project_logo"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:scaleType="centerCrop"
+				android:contentDescription="@string/content_description_project_logo"
+				android:src="@drawable/project_icon"/>
+
 			<Toolbar
 				android:id="@+id/detail_toolbar"
 				android:layout_width="match_parent"
 				android:layout_height="?attr/actionBarSize"
+				android:background="@drawable/glass"
 				app:layout_collapseMode="pin"
-				app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+				app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+				tools:title="Project Title"/>
 
 		</android.support.design.widget.CollapsingToolbarLayout>
 
@@ -46,9 +56,9 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_gravity="center_vertical|start"
-		android:layout_margin="@dimen/fab_margin"
+		android:layout_margin="@dimen/margin_fab"
 		app:layout_anchor="@+id/project_detail_container"
 		app:layout_anchorGravity="top|end"
-		app:srcCompat="@android:drawable/stat_notify_chat"/>
+		app:srcCompat="@android:drawable/ic_menu_edit"/>
 
 </android.support.design.widget.CoordinatorLayout>

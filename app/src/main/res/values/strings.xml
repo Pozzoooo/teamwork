@@ -1,4 +1,7 @@
 <resources>
 	<string name="app_name">Teamwork</string>
 	<string name="title_project_detail">Project Detail</string>
+
+	<string name="content_description_project_logo">Project logo</string>
+	<string name="content_description_favorite">Favorite</string>
 </resources>
