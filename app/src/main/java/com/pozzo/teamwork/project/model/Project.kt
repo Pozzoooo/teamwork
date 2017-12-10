@@ -10,7 +10,7 @@ import android.os.Parcelable
  * @see com.pozzo.teamwork.architecture.model.Site
  * @since 27/07/17.
  */
-data class Project(val id: String, val logo: String, val name: String, val description: String,
+data class Project(val id: String, val logo: String?, val name: String, val description: String,
                    val isProjectAdmin: Boolean) : Parcelable {
 
     constructor(parcel: Parcel) : this(

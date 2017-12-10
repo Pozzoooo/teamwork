@@ -43,9 +43,12 @@ class ProjectDetailFragment: BaseFragment() {
             appBarLayout.title = project.name
 
             val projectLogo: ImageView = activity.findViewById(R.id.project_logo)
-            Picasso.with(activity).
-                    load(project.logo).
-                    into(projectLogo)
+            if (project.logo?.isEmpty() == false) {
+                Picasso.with(activity)
+                        .load(project.logo)
+                        .noPlaceholder()
+                        .into(projectLogo)
+            }
         }
 
         val rootView = inflater.inflate(R.layout.project_detail, container, false)

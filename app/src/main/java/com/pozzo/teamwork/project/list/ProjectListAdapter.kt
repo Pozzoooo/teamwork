@@ -47,10 +47,12 @@ class ProjectListAdapter(private var items: List<Project>, private var projectLi
         fun display(item: Project) {
             this.item = item
             contentView.text = item.name
-            Picasso.with(view.context).
-                    load(item.logo).
-                    placeholder(R.mipmap.ic_launcher).
-                    into(projectLogo)
+            if (item.logo?.isEmpty() == false) {
+                Picasso.with(view.context)
+                        .load(item.logo)
+                        .noPlaceholder()
+                        .into(projectLogo)
+            }
         }
     }
 }
